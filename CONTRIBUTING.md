@@ -10,7 +10,7 @@ Before sending your pull requests, make sure you followed this list.
 
 1. Read [contributing guidelines](CONTRIBUTING.md).
 2. Read [Code of Conduct](CODE-OF-CONDUCT.md).
-3. Increase the version numbers in any examples files and the {{PKG_VERS}} to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+3. Increase the version numbers in any examples files, the [package.json file](package.json), and the [Gemspec file](pueri.gemspec) to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
 4. You may merge the Pull Request in once you have the approval of the project owner.
 
 ## Reporting a Bug & Requesting Features
