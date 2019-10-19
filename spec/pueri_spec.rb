@@ -106,3 +106,86 @@ RSpec.describe Pueri::Age do
     end
   end
 end
+
+RSpec.describe Pueri::Vax do
+  context 'when creation follows documentation' do
+    let(:example1) { Pueri::Vax.new(30.0) }
+    let(:example2) { Pueri::Vax.new(70.0) }
+    let(:example3) { Pueri::Vax.new(100.0) }
+    let(:example4) { Pueri::Vax.new(130.0) }
+    let(:example5) { Pueri::Vax.new(160.0) }
+    let(:example6) { Pueri::Vax.new(190.0) }
+    let(:example7) { Pueri::Vax.new(280.0) }
+    let(:example8) { Pueri::Vax.new(370.0) }
+    let(:example9) { Pueri::Vax.new(460.0) }
+    let(:example10) { Pueri::Vax.new(1500.0) }
+    let(:example11) { Pueri::Vax.new(4000.0) }
+
+    it 'parses ages in days' do
+      expect(example1).not_to be nil
+      expect(example2).not_to be nil
+      expect(example3).not_to be nil
+      expect(example4).not_to be nil
+      expect(example5).not_to be nil
+      expect(example6).not_to be nil
+      expect(example7).not_to be nil
+      expect(example8).not_to be nil
+      expect(example9).not_to be nil
+      expect(example10).not_to be nil
+      expect(example11).not_to be nil
+
+      expect(example1).to be_a Pueri::Vax
+      expect(example2).to be_a Pueri::Vax
+      expect(example3).to be_a Pueri::Vax
+      expect(example4).to be_a Pueri::Vax
+      expect(example5).to be_a Pueri::Vax
+      expect(example6).to be_a Pueri::Vax
+      expect(example7).to be_a Pueri::Vax
+      expect(example8).to be_a Pueri::Vax
+      expect(example9).to be_a Pueri::Vax
+      expect(example10).to be_a Pueri::Vax
+      expect(example11).to be_a Pueri::Vax
+    end
+
+    it 'outputs the adequate vaccine calendar for the age' do
+      expect(example1.table).not_to be nil
+      expect(example2.table).not_to be nil
+      expect(example3.table).not_to be nil
+      expect(example4.table).not_to be nil
+      expect(example5.table).not_to be nil
+      expect(example6.table).not_to be nil
+      expect(example7.table).not_to be nil
+      expect(example8.table).not_to be nil
+      expect(example9.table).not_to be nil
+      expect(example10.table).not_to be nil
+      expect(example11.table).not_to be nil
+
+      expect(example1.table).to be_a String
+      expect(example2.table).to be_a String
+      expect(example3.table).to be_a String
+      expect(example4.table).to be_a String
+      expect(example5.table).to be_a String
+      expect(example6.table).to be_a String
+      expect(example7.table).to be_a String
+      expect(example8.table).to be_a String
+      expect(example9.table).to be_a String
+      expect(example10.table).to be_a String
+      expect(example11.table).to be_a String
+    end
+
+    it 'outputs the table notes' do
+      expect(example1.parse_notes).not_to be nil
+      expect(example1.parse_notes).to be_a String
+    end
+  end
+
+  context 'when creation ignores documentation' do
+    let(:example1) { Pueri::Vax.new(0.0) }
+    let(:example2) { Pueri::Vax.new(60_000.0) }
+
+    it 'raises an error when age is out of range' do
+      expect { example1 }.to raise_error ArgumentError
+      expect { example2 }.to raise_error ArgumentError
+    end
+  end
+end
