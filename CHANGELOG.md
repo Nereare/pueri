@@ -18,4 +18,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Pull request.
 * ReadMe file.
 * Changelog file.
-* ...
+* Age calculator, with year, month, and day discrimination, and two formats (short and long).
