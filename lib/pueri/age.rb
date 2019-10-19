@@ -7,6 +7,9 @@ module Pueri
   class Age
     attr_reader :days_month, :age
 
+    # Creates an Age instance.
+    #
+    # @param date [String] A date current or on the past - NOT on the future.
     def initialize(date)
       @days_month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
       @age = parse_age(date)
