@@ -1,3 +1,8 @@
 # Custom RuboCop configs
 AllCops:
   TargetRubyVersion: 2.5
+
+Metrics/ClassLength:
+  Max: 150
+Metrics/ModuleLength:
+  Max: 150
