@@ -1,8 +1,13 @@
 # Pueri
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/pueri)](https://github.com/Nereare/pueri)
-[![License](https://img.shields.io/github/license/Nereare/pueri.svg)](https://github.com/Nereare/pueri)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/pueri)](https://github.com/Nereare/pueri/releases)
+[![License](https://img.shields.io/badge/license-Hippocratic%20License%20v1.1-red)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
+
+[![Travis (.org)](https://img.shields.io/travis/Nereare/pueri)](https://travis-ci.org/Nereare/pueri)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/Nereare/pueri)](https://codeclimate.com/github/Nereare/pueri)
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Nereare/pueri)](https://codeclimate.com/github/Nereare/pueri)
+[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Nereare/pueri)](https://libraries.io/github/Nereare/pueri)
 
 Um script em Ruby para ajudar o dia-a-dia de médicos e enfermeiros de Atenção Básica.
 
