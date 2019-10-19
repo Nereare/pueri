@@ -50,8 +50,8 @@ module Pueri
 
     # This method takes a date in the string format "DD/MM/YYYY" and returns
     # a Time object.
-    def birthday_timestamp_time(date)
-      date.chomp!
+    def birthday_timestamp_time(date_read)
+      date = date_read.chomp
       if date =~ %r{/}
         birthday = date.split('/')
         birthday[2] = year(birthday[2])
