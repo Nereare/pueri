@@ -19,3 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * ReadMe file.
 * Changelog file.
 * Age calculator, with year, month, and day discrimination, and two formats (short and long).
+* Vaccine Calendar checker, based on the one from [Brazil's PNI][PNI], 2019.
+
+[PNI]: http://www.saude.gov.br/saude-de-a-z/vacinacao/calendario-vacinacao

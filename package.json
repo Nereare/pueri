@@ -1,7 +1,7 @@
 {
   "name": "Pueri",
   "description": "Um script em Ruby para ajudar o dia-a-dia de médicos e enfermeiros de Atenção Básica.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "maintainers": [
     {
       "name": "Igor Padoim",
