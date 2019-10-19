@@ -91,12 +91,17 @@ module Pueri
       @table = table_obj.render(:unicode, alignment: :center)
     end
 
+    def out_of_range
+      m = 'The given age is out of reality bounds'
+      raise ArgumentError, m
+    end
+
     # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
     # Disabled rubocop for this method for breaking this switch apart will make
     # it less readable than keeping it as a whole logic.
     def calc_range(norm_age)
       r = case norm_age
-          when 0.0..59.99 then 0
+          when 0.01..59.99 then 0
           when 60.0..89.99 then 1
           when 90.0..119.99 then 2
           when 120.0..149.99 then 3
@@ -107,7 +112,7 @@ module Pueri
           when 455.25..1460.99 then 8
           when 1461.0..3287.24 then 9
           when 3287.25..50_000.0 then 10
-          else -1
+          else out_of_range
           end
       r
     end
