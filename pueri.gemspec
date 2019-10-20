@@ -13,10 +13,10 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Um script em Ruby para ajudar o dia-a-dia de médicos e'\
                        ' enfermeiros de Atenção Básica.'
-  spec.homepage      = 'https://github.com/Nereare/pueri'
+  spec.homepage      = 'https://nereare.github.io/pueri/'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = 'https://github.com/Nereare/pueri'
   spec.metadata['changelog_uri'] = 'https://github.com/Nereare/pueri/blob/'\
                                    'master/CHANGELOG.md'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/Nereare/pueri/issues'
