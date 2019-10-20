@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - `2019-10-19`
+
 ### Added
 * Code of Conduct from [Contributor Covenant v1.4.1](https://www.contributor-covenant.org/).
 * [License](LICENSE.md).
@@ -24,3 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [PNI]: http://www.saude.gov.br/saude-de-a-z/vacinacao/calendario-vacinacao
 [DNPM]: https://www.fcm.unicamp.br/fcm/neuropediatria-conteudo-didatico/desenvolvimento-neuropsicomotor
+
+[Unreleased]: https://github.com/Nereare/pueri/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/Nereare/pueri/releases/tag/v0.7.0
