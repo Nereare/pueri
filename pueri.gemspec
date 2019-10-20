@@ -40,6 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.9'
 
-  spec.add_dependency 'pastel'
-  spec.add_dependency 'tty-table'
+  spec.add_dependency 'pastel', '~> 0.7.3'
+  spec.add_dependency 'tty-table', '~> 0.11.0'
 end

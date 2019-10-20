@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     pueri (0.7.0)
-      pastel
-      tty-table
+      pastel (~> 0.7.3)
+      tty-table (~> 0.11.0)
 
 GEM
   remote: https://rubygems.org/
