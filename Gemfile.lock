@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pueri (0.7.0)
+    pueri (0.7.1)
       pastel (~> 0.7.3)
       tty-table (~> 0.11.0)
 

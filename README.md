@@ -10,7 +10,9 @@
 [![Code Climate coverage](https://img.shields.io/codeclimate/coverage/Nereare/pueri)](https://codeclimate.com/github/Nereare/pueri)
 [![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Nereare/pueri)](https://libraries.io/github/Nereare/pueri)
 
-Um script em Ruby para ajudar o dia-a-dia de médicos e enfermeiros de Atenção Básica.
+Um *script* em Ruby para ajudar o dia-a-dia de médicos e enfermeiros de Atenção Básica.
+
+**Ao usar os conteúdos desse projeto, você assume estar ciente dos nossos [objetivos e limitações](ABOUT.md).**
 
 ## Installing
 
