@@ -189,3 +189,86 @@ RSpec.describe Pueri::Vax do
     end
   end
 end
+
+RSpec.describe Pueri::Neuro do
+  context 'when creation follows documentation' do
+    let(:example1) { Pueri::Neuro.new(10.0) }
+    let(:example2) { Pueri::Neuro.new(70.0) }
+    let(:example3) { Pueri::Neuro.new(100.0) }
+    let(:example4) { Pueri::Neuro.new(130.0) }
+    let(:example5) { Pueri::Neuro.new(190.0) }
+    let(:example6) { Pueri::Neuro.new(280.0) }
+    let(:example7) { Pueri::Neuro.new(310.0) }
+    let(:example8) { Pueri::Neuro.new(370.0) }
+    let(:example9) { Pueri::Neuro.new(460.0) }
+    let(:example10) { Pueri::Neuro.new(550.0) }
+    let(:example11) { Pueri::Neuro.new(740.0) }
+    let(:example12) { Pueri::Neuro.new(1_100.0) }
+
+    it 'parses ages in days' do
+      expect(example1).not_to be nil
+      expect(example2).not_to be nil
+      expect(example3).not_to be nil
+      expect(example4).not_to be nil
+      expect(example5).not_to be nil
+      expect(example6).not_to be nil
+      expect(example7).not_to be nil
+      expect(example8).not_to be nil
+      expect(example9).not_to be nil
+      expect(example10).not_to be nil
+      expect(example11).not_to be nil
+      expect(example12).not_to be nil
+
+      expect(example1).to be_a Pueri::Neuro
+      expect(example2).to be_a Pueri::Neuro
+      expect(example3).to be_a Pueri::Neuro
+      expect(example4).to be_a Pueri::Neuro
+      expect(example5).to be_a Pueri::Neuro
+      expect(example6).to be_a Pueri::Neuro
+      expect(example7).to be_a Pueri::Neuro
+      expect(example8).to be_a Pueri::Neuro
+      expect(example9).to be_a Pueri::Neuro
+      expect(example10).to be_a Pueri::Neuro
+      expect(example11).to be_a Pueri::Neuro
+      expect(example12).to be_a Pueri::Neuro
+    end
+
+    it 'outputs neuropsichosocial development tables' do
+      expect(example1.table).not_to be nil
+      expect(example2.table).not_to be nil
+      expect(example3.table).not_to be nil
+      expect(example4.table).not_to be nil
+      expect(example5.table).not_to be nil
+      expect(example6.table).not_to be nil
+      expect(example7.table).not_to be nil
+      expect(example8.table).not_to be nil
+      expect(example9.table).not_to be nil
+      expect(example10.table).not_to be nil
+      expect(example11.table).not_to be nil
+      expect(example12.table).not_to be nil
+
+      expect(example1.table).to be_a String
+      expect(example2.table).to be_a String
+      expect(example3.table).to be_a String
+      expect(example4.table).to be_a String
+      expect(example5.table).to be_a String
+      expect(example6.table).to be_a String
+      expect(example7.table).to be_a String
+      expect(example8.table).to be_a String
+      expect(example9.table).to be_a String
+      expect(example10.table).to be_a String
+      expect(example11.table).to be_a String
+      expect(example12.table).to be_a String
+    end
+  end
+
+  context 'when creation ignores documentation' do
+    let(:example1) { Pueri::Neuro.new(0.0) }
+    let(:example2) { Pueri::Neuro.new(60_000.0) }
+
+    it 'raises an error when age is out of range' do
+      expect { example1 }.to raise_error ArgumentError
+      expect { example2 }.to raise_error ArgumentError
+    end
+  end
+end
