@@ -1,3 +1,7 @@
+<p style='text-align: center; margin-bottom: 0;'>
+  <img alt='Pueri Logo' src='https://i.imgur.com/YZr2UEn.png' style='max-width: 250px; margin: 0;' />
+</p>
+
 # Pueri
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/pueri)](https://github.com/Nereare/pueri/releases)
