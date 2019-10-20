@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = Pueri.version
   spec.authors       = ['Igor Padoim']
   spec.email         = ['igorpadoim@gmail.com']
-  spec.license       = 'Hippocratic License'
+  spec.license       = 'Nonstandard'
 
   spec.summary       = 'Um script em Ruby para ajudar o dia-a-dia de médicos e'\
                        ' enfermeiros de Atenção Básica.'
