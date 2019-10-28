@@ -31,7 +31,7 @@ module Pueri
     def to_s
       [
         "- #{@name} #{@concentration.to_i}#{@conc_unit.join '/'}",
-        "Tomar #{@result}#{@conc_unit[1]} #{time_to_s} #{days}."
+        "Tomar #{@result}#{@conc_unit[1]} #{time_to_s} #{days_to_s}."
       ].join "\n"
     end
 
