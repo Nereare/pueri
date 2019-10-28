@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+* Included prettified output for `DoseCalc`'s `to_s` method.
+
 ## [0.11.2] - `2019-10-28`
 
 ### Added

@@ -28,11 +28,16 @@ module Pueri
     # Outputs the calculated dosage into a prescription string.
     #
     # @return [String] The prescription string.
-    def to_s
-      [
-        "- #{@name} #{@concentration.to_i}#{@conc_unit.join '/'}",
-        "Tomar #{@result}#{@conc_unit[1]} #{time_to_s} #{days_to_s}."
-      ].join "\n"
+    def to_s(pretty = false)
+      if pretty
+        pretty_to_s
+      else
+        [
+          '',
+          "- #{@name} #{@concentration.to_i}#{@conc_unit.join '/'}",
+          "Tomar #{@result}#{@conc_unit[1]} #{time_to_s} #{days_to_s}."
+        ].join "\n"
+      end
     end
 
     # Outputs the calculated dosage for each taking. _E.g._ +3.7+, as in _use
@@ -44,6 +49,27 @@ module Pueri
     end
 
     private
+
+    def pre_pretty_to_s
+      p = Pastel.new
+      qtt = p.cyan(@result, @conc_unit[1])
+      time = @time.to_i.to_s.rjust(2, '0')
+      time = p.cyan(time, '/', time, 'h')
+      days = p.cyan(@days.to_s.rjust(2, '0'), ' dias')
+
+      [qtt, time, days]
+    end
+
+    def pretty_to_s
+      p = Pastel.new
+      qtt, time, days = pre_pretty_to_s
+      [
+        '',
+        "#{p.cyan('1.')} #{@name} #{@concentration.to_i}"\
+        "#{@conc_unit.join('/')} ".ljust(90, '-'),
+        "   Dar #{qtt} de #{time} por #{days}."
+      ].join("\n")
+    end
 
     def time_to_s
       if @time == 24.0
