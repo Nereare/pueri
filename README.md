@@ -20,7 +20,18 @@ Um *script* em Ruby para ajudar o dia-a-dia de médicos e enfermeiros de Atenç�
 
 ## Installing
 
-1. To-do.
+1. Have both [Ruby](https://www.ruby-lang.org/) and [Bundler](https://bundler.io/) intalled.
+2. Add this line to your `Gemfile`:
+```ruby
+gem 'pueri', '~> 0.11.2'
+```
+3. Then run:
+```shell
+bundle install
+```
+4. You are now ready to use the gem!
+
+Read [the documentation](https://nereare.github.io/pueri/) for how to use it!
 
 ## Contributing
 
