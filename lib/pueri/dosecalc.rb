@@ -2,7 +2,7 @@
 
 module Pueri
   # Calculates the prescription of a given medication given the weight of the
-  # pacient, the dose-per-take, the concentration of the medication's
+  # pacient, the dose-per-weight-day, the concentration of the medication's
   # presentation and the periodicity of takes in hours.
   class DoseCalc
     attr_reader :weight, :dose, :time, :days, :concentration, :result, :name
