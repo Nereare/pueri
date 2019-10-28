@@ -300,7 +300,7 @@ RSpec.describe Pueri::DoseCalc do
       )
     end
 
-    it 'calculates medications\' dosages' do
+    it 'calculates medications\' prescription doses' do
       expect(example1).not_to be nil
       expect(example1).to be_a Pueri::DoseCalc
       expect(example1.to_f).to eq 2.7
@@ -310,7 +310,7 @@ RSpec.describe Pueri::DoseCalc do
       expect(example2.to_f).to eq 1.0
     end
 
-    it 'outputs dosages as a prescription string' do
+    it 'outputs doses as a prescription string' do
       expect(example1.to_s).not_to be nil
       expect(example1.to_s).to be_a String
       expect(example1.to_s.size).to be > 0
@@ -320,7 +320,7 @@ RSpec.describe Pueri::DoseCalc do
       expect(example2.to_s.size).to be > 0
     end
 
-    it 'outputs dosages for each taking as floats' do
+    it 'outputs doses for each taking as floats' do
       expect(example1.to_f).not_to be nil
       expect(example1.to_f).to be_a Float
 
