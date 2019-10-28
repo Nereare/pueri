@@ -29,12 +29,9 @@ module Pueri
     #
     # @return [String] The prescription string.
     def to_s
-      time = @time.to_i.to_s.rjust(2, '0')
-      days = @days.to_i.to_s.rjust(2, '0')
       [
         "- #{@name} #{@concentration.to_i}#{@conc_unit.join '/'}",
-        "Tomar #{@result}#{@conc_unit[1]} de #{time}/#{time} horas por #{days}"\
-        ' dias.'
+        "Tomar #{@result}#{@conc_unit[1]} #{time_to_s} #{days}."
       ].join "\n"
     end
 
@@ -48,9 +45,44 @@ module Pueri
 
     private
 
+    def time_to_s
+      if @time == 24.0
+        'uma vez por dia'
+      else
+        time = @time.to_i.to_s.rjust(2, '0')
+        hour = 'hora'
+        hour += 's' if @time > 1.0
+        "de #{time}/#{time} #{hour}"
+      end
+    end
+
+    def days_to_s
+      if @days == 1.0
+        str = 'por um dia'
+        str = 'em dose única' if @time == 24.0
+        str
+      else
+        days = @days.to_i.to_s.rjust(2, '0')
+        str = 'dia'
+        str += 's' if @days > 1.0
+        "por #{days} #{str}"
+      end
+    end
+
     def init_vars(params)
+      check_vars(params)
       init_calc_vars(params)
       init_str_vars(params)
+    end
+
+    def check_vars(params)
+      params.each do |key, value|
+        if value.is_a? String
+          raise ArgumentError, "#{key} must not be zero" if value.empty?
+        elsif value.zero?
+          raise ArgumentError, "#{key} must not be zero"
+        end
+      end
     end
 
     def init_calc_vars(params)
