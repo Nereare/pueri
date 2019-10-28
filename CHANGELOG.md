@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.2] - `2019-10-28`
+
 ### Added
 * [Disclaimer](ABOUT.md), regarding the objectives and limitations of this project.
 * `DoseCalc`, a class for calculating the dosage of medications for pediatric patients.
@@ -35,5 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [PNI]: http://www.saude.gov.br/saude-de-a-z/vacinacao/calendario-vacinacao
 [DNPM]: https://www.fcm.unicamp.br/fcm/neuropediatria-conteudo-didatico/desenvolvimento-neuropsicomotor
 
-[Unreleased]: https://github.com/Nereare/pueri/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/Nereare/pueri/compare/v0.11.2...HEAD
+[0.11.2]: https://github.com/Nereare/pueri/compare/v0.7.0...v0.11.2
 [0.7.0]: https://github.com/Nereare/pueri/releases/tag/v0.7.0
