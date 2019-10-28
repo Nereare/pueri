@@ -88,12 +88,12 @@ module Pueri
     def check_str_var(key, value)
       raise ArgumentError, "#{key} must not be zero" if value.empty?
 
-      if key == 'dose_unit'
+      if key == :dose_unit
         msg = "#{key} must follow unit/kg/d format"
-        raise ArgumentError, msg unless value =~ %r{^[A-Za-z]+\/kg\/d$}
-      elsif key == 'conc_unit'
+        raise ArgumentError, msg unless value.match? %r{^[A-Za-z]+\/kg\/d$}
+      elsif key == :conc_unit
         msg = "#{key} must follow unit/presentation format"
-        raise ArgumentError, msg unless value =~ %r{^[A-Za-z]+\/[A-Za-z]+$}
+        raise ArgumentError, msg unless value.match? %r{^[A-Za-z]+\/[A-Za-z]+$}
       end
     end
 
