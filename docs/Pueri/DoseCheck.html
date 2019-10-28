@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Pueri::DoseCalc
+  Class: Pueri::DoseCheck
   
     &mdash; Documentation by YARD 0.9.20
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Pueri::DoseCalc";
+  pathId = "Pueri::DoseCheck";
   relpath = '../';
 </script>
 
@@ -39,7 +39,7 @@
     <a href="../_index.html">Index (D)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../Pueri.html" title="Pueri (module)">Pueri</a></span></span>
      &raquo; 
-    <span class="title">DoseCalc</span>
+    <span class="title">DoseCheck</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Pueri::DoseCalc
+      <div id="content"><h1>Class: Pueri::DoseCheck
   
   
   
@@ -74,7 +74,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Pueri::DoseCalc</li>
+            <li class="next">Pueri::DoseCheck</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -94,7 +94,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/pueri/dosecalc.rb</dd>
+    <dd>lib/pueri/dosecheck.rb</dd>
   </dl>
   
 </div>
@@ -102,8 +102,8 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Calculates the prescription of a given medication given the weight of the
-pacient, the dose-per-weight-day, the concentration of the medication&#39;s
+<p>Checks the prescription of a given medication given the weight of the
+pacient, the dose-per-take, the concentration of the medication&#39;s
 presentation and the periodicity of takes in hours.</p>
 
 
@@ -170,35 +170,6 @@ presentation and the periodicity of takes in hours.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Returns the value of attribute concentration.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#days-instance_method" title="#days (instance method)">#<strong>days</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute days.</p>
 </div></span>
   
 </li>
@@ -350,6 +321,33 @@ presentation and the periodicity of takes in hours.</p>
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#way-instance_method" title="#way (instance method)">#<strong>way</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute way.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#weight-instance_method" title="#weight (instance method)">#<strong>weight</strong>  &#x21d2; Object </a>
     
 
@@ -392,7 +390,7 @@ presentation and the periodicity of takes in hours.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(params)  &#x21d2; DoseCalc </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(params)  &#x21d2; DoseCheck </a>
     
 
     
@@ -409,7 +407,7 @@ presentation and the periodicity of takes in hours.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Calculate the dosage for each taking of a given medicine.</p>
+<p>Calculate the dosage-per-weight-day for the prescribed medicine.</p>
 </div></span>
   
 </li>
@@ -433,7 +431,7 @@ presentation and the periodicity of takes in hours.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Outputs the calculated dosage for each taking.</p>
+<p>Outputs the calculated dosage-per-weight-day as a float.</p>
 </div></span>
   
 </li>
@@ -457,7 +455,7 @@ presentation and the periodicity of takes in hours.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Outputs the calculated dosage into a prescription string.</p>
+<p>Outputs the calculated dosage as a string.</p>
 </div></span>
   
 </li>
@@ -472,7 +470,7 @@ presentation and the periodicity of takes in hours.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="" title="Pueri::DoseCalc (class)">DoseCalc</a></span></tt> 
+    #<strong>initialize</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="" title="Pueri::DoseCheck (class)">DoseCheck</a></span></tt> 
   
 
   
@@ -481,7 +479,7 @@ presentation and the periodicity of takes in hours.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Calculate the dosage for each taking of a given medicine.</p>
+<p>Calculate the dosage-per-weight-day for the prescribed medicine.</p>
 
 
   </div>
@@ -502,28 +500,28 @@ presentation and the periodicity of takes in hours.</p>
         &mdash;
         <div class='inline'>
 <p>A Hash of elements, all of which are required to properly calculate and
-output the final dosage-per-taking:</p>
+output the final dosage-per-weight-day:</p>
 <dl class="rdoc-list label-list"><dt><code>:weight</code>
 <dd>
 <p>The weight of the pacient, in <em>kilograms</em>.</p>
 </dd><dt><code>:dose</code>
 <dd>
-<p>The dose for the pacient, in <em>unit/kg/day</em>.</p>
+<p>The dose for the pacient, in any given <em>unit</em>.</p>
 </dd><dt><code>:time</code>
 <dd>
 <p>The time between takings, in hours.</p>
-</dd><dt><code>:days</code>
-<dd>
-<p>The number of days to take the medication.</p>
 </dd><dt><code>:concentration</code>
 <dd>
 <p>The posologic concentration, number only.</p>
 </dd><dt><code>:dose_unit</code>
 <dd>
-<p>The unit of dosage for the pacient (<em>e.g.</em> mg/kg/d).</p>
+<p>The unit of medication for each taking (<em>e.g.</em> mL).</p>
 </dd><dt><code>:conc_unit</code>
 <dd>
 <p>The unit of concentration (<em>e.g.</em> mg/mL, mcg/pill).</p>
+</dd><dt><code>:way</code>
+<dd>
+<p>The way of admnistration (<em>e.g.</em> IV, SC).</p>
 </dd><dt><code>:name</code>
 <dd>
 <p>The name of the medication.</p>
@@ -547,11 +545,11 @@ output the final dosage-per-taking:</p>
 26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_init_vars'>init_vars</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='ivar'>@result</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@weight</span> <span class='op'>*</span> <span class='ivar'>@dose</span> <span class='op'>*</span> <span class='ivar'>@time</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='lparen'>(</span><span class='float'>24.0</span> <span class='op'>*</span> <span class='ivar'>@concentration</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span>
+  <span class='ivar'>@result</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@dose</span> <span class='op'>*</span> <span class='ivar'>@concentration</span> <span class='op'>*</span> <span class='float'>24.0</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='lparen'>(</span><span class='ivar'>@time</span> <span class='op'>*</span> <span class='ivar'>@weight</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -596,7 +594,7 @@ output the final dosage-per-taking:</p>
 11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_conc_unit'>conc_unit</span>
   <span class='ivar'>@conc_unit</span>
@@ -639,53 +637,10 @@ output the final dosage-per-taking:</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_concentration'>concentration</span>
   <span class='ivar'>@concentration</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="days-instance_method">
-  
-    #<strong>days</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the value of attribute days</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-8
-9
-10</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_days'>days</span>
-  <span class='ivar'>@days</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -725,7 +680,7 @@ output the final dosage-per-taking:</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dose'>dose</span>
   <span class='ivar'>@dose</span>
@@ -768,7 +723,7 @@ output the final dosage-per-taking:</p>
 11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dose_unit'>dose_unit</span>
   <span class='ivar'>@dose_unit</span>
@@ -811,7 +766,7 @@ output the final dosage-per-taking:</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -854,7 +809,7 @@ output the final dosage-per-taking:</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_result'>result</span>
   <span class='ivar'>@result</span>
@@ -897,10 +852,53 @@ output the final dosage-per-taking:</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_time'>time</span>
   <span class='ivar'>@time</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="way=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="way-instance_method">
+  
+    #<strong>way</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute way</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_way'>way</span>
+  <span class='ivar'>@way</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -940,7 +938,7 @@ output the final dosage-per-taking:</p>
 10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_weight'>weight</span>
   <span class='ivar'>@weight</span>
@@ -969,8 +967,7 @@ output the final dosage-per-taking:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Outputs the calculated dosage for each taking. <em>E.g.</em>
-<code>3.7</code>, as in _use 3.7 units of medication each time_.</p>
+<p>Outputs the calculated dosage-per-weight-day as a float.</p>
 
 
   </div>
@@ -989,7 +986,7 @@ output the final dosage-per-taking:</p>
       
         &mdash;
         <div class='inline'>
-<p>The dosage to be used each time one takes the medication.</p>
+<p>The dosage prescribe as a float, without units.</p>
 </div>
       
     </li>
@@ -1002,12 +999,12 @@ output the final dosage-per-taking:</p>
       <pre class="lines">
 
 
+41
 42
-43
-44</pre>
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_f'>to_f</span>
   <span class='ivar'>@result</span>
@@ -1029,7 +1026,7 @@ output the final dosage-per-taking:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Outputs the calculated dosage into a prescription string.</p>
+<p>Outputs the calculated dosage as a string.</p>
 
 
   </div>
@@ -1048,7 +1045,7 @@ output the final dosage-per-taking:</p>
       
         &mdash;
         <div class='inline'>
-<p>The prescription string.</p>
+<p>The dosage-per-weight-day string.</p>
 </div>
       
     </li>
@@ -1069,12 +1066,12 @@ output the final dosage-per-taking:</p>
 36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/pueri/dosecalc.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/pueri/dosecheck.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='lbracket'>[</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>- </span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='ivar'>@concentration</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='ivar'>@conc_unit</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tomar </span><span class='embexpr_beg'>#{</span><span class='ivar'>@result</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='ivar'>@conc_unit</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time_to_s'>time_to_s</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_days_to_s'>days_to_s</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='ivar'>@concentration</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='ivar'>@conc_unit</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_usage'>usage</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-&gt; Dose de </span><span class='embexpr_beg'>#{</span><span class='ivar'>@result</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='ivar'>@conc_unit</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>/kg/d.</span><span class='tstring_end'>&quot;</span></span>
   <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1087,7 +1084,7 @@ output the final dosage-per-taking:</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 28 17:34:32 2019 by
+  Generated on Mon Oct 28 17:34:33 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.20 (ruby-2.5.5).
 </div>
