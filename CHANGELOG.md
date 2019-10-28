@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * [Disclaimer](ABOUT.md), regarding the objectives and limitations of this project.
 * `DoseCalc`, a class for calculating dosage of medications for paediatric pacients.
+* `DoseCheck`, a class for checking the dosage-per-weight-day of a prescribed medication.
 
 ### Changed
 * Bumped [RuboCop](https://github.com/rubocop-hq/rubocop) to `v.0.76.0`.

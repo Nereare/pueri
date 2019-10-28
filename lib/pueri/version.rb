@@ -6,7 +6,7 @@
 # of Immunization (PNI), using the 2019 uptade.
 module Pueri
   # Sets the current version of the gem
-  @version = '0.9.2'
+  @version = '0.10.2'
 
   # Returns the Gem's current version.
   #
