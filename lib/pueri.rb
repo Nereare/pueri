@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'pueri/age'
+require 'pueri/dosecalc'
 require 'pueri/neuro'
 require 'pueri/vax'
 require 'pueri/version'
