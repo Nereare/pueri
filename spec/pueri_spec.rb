@@ -272,3 +272,415 @@ RSpec.describe Pueri::Neuro do
     end
   end
 end
+
+RSpec.describe Pueri::DoseCalc do
+  context 'when creation follows documentation' do
+    let(:example1) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: '  Cefalexina   '
+      )
+    end
+    let(:example2) do
+      Pueri::DoseCalc.new(
+        weight: 30,
+        dose: 200,
+        time: 24,
+        days: 1,
+        concentration: 6_000,
+        dose_unit: 'mcg/kg/d',
+        conc_unit: 'mcg/cp',
+        name: 'Ivermectina'
+      )
+    end
+
+    it 'calculates medications\' prescription doses' do
+      expect(example1).not_to be nil
+      expect(example1).to be_a Pueri::DoseCalc
+      expect(example1.to_f).to eq 2.7
+
+      expect(example2).not_to be nil
+      expect(example2).to be_a Pueri::DoseCalc
+      expect(example2.to_f).to eq 1.0
+    end
+
+    it 'outputs doses as a prescription string' do
+      expect(example1.to_s).not_to be nil
+      expect(example1.to_s).to be_a String
+      expect(example1.to_s.size).to be > 0
+
+      expect(example2.to_s).not_to be nil
+      expect(example2.to_s).to be_a String
+      expect(example2.to_s.size).to be > 0
+    end
+
+    it 'outputs doses for each taking as floats' do
+      expect(example1.to_f).not_to be nil
+      expect(example1.to_f).to be_a Float
+
+      expect(example2.to_f).not_to be nil
+      expect(example2.to_f).to be_a Float
+    end
+  end
+
+  context 'when creation ignores documentation' do
+    let(:example1) do
+      Pueri::DoseCalc.new(
+        weight: 0,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example2) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 0,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example3) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 0,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example4) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 0,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example5) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 0,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example6) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: '',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example7) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: '',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example8) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg/mL',
+        name: ''
+      )
+    end
+    let(:example9) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina'
+      )
+    end
+    let(:example10) do
+      Pueri::DoseCalc.new(
+        weight: 18,
+        dose: 30,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/kg/d',
+        conc_unit: 'mg',
+        name: 'Cefalexina'
+      )
+    end
+
+    it 'checks for parameter integrity and conformity' do
+      expect { example1 }.to raise_error ArgumentError
+      expect { example2 }.to raise_error ArgumentError
+      expect { example3 }.to raise_error ArgumentError
+      expect { example4 }.to raise_error ArgumentError
+      expect { example5 }.to raise_error ArgumentError
+      expect { example6 }.to raise_error ArgumentError
+      expect { example7 }.to raise_error ArgumentError
+      expect { example8 }.to raise_error ArgumentError
+      expect { example9 }.to raise_error ArgumentError
+      expect { example10 }.to raise_error ArgumentError
+    end
+  end
+end
+
+RSpec.describe Pueri::DoseCalc do
+  context 'when creation follows documentation' do
+    let(:example1) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example2) do
+      Pueri::DoseCheck.new(
+        weight: 30,
+        dose: 1,
+        time: 24,
+        days: 1,
+        concentration: 6_000,
+        dose_unit: 'cp',
+        conc_unit: 'mcg/cp',
+        name: 'Ivermectina',
+        way: 'VO'
+      )
+    end
+
+    it 'calculates medications\' prescription dosages' do
+      expect(example1).not_to be nil
+      expect(example1).to be_a Pueri::DoseCheck
+      expect(example1.to_f).to eq 30.0
+
+      expect(example2).not_to be nil
+      expect(example2).to be_a Pueri::DoseCheck
+      expect(example2.to_f).to eq 200.0
+    end
+
+    it 'outputs dosages as a string' do
+      expect(example1.to_s).not_to be nil
+      expect(example1.to_s).to be_a String
+      expect(example1.to_s.size).to be > 0
+
+      expect(example2.to_s).not_to be nil
+      expect(example2.to_s).to be_a String
+      expect(example2.to_s.size).to be > 0
+    end
+
+    it 'outputs dosages as a float' do
+      expect(example1.to_f).not_to be nil
+      expect(example1.to_f).to be_a Float
+
+      expect(example2.to_f).not_to be nil
+      expect(example2.to_f).to be_a Float
+    end
+  end
+
+  context 'when creation follows documentation' do
+    let(:example1) do
+      Pueri::DoseCheck.new(
+        weight: 0,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example2) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 0.0,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example3) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 0,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example4) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 0,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example5) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 0,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example6) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mg/mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example7) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: '',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example8) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example9) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: '',
+        name: 'Cefalexina',
+        way: 'VO'
+      )
+    end
+    let(:example10) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: '',
+        way: 'VO'
+      )
+    end
+    let(:example11) do
+      Pueri::DoseCheck.new(
+        weight: 18,
+        dose: 2.7,
+        time: 6,
+        days: 7,
+        concentration: 50,
+        dose_unit: 'mL',
+        conc_unit: 'mg/mL',
+        name: 'Cefalexina',
+        way: ''
+      )
+    end
+
+    it 'checks for parameter integrity and conformity' do
+      expect { example1 }.to raise_error ArgumentError
+      expect { example2 }.to raise_error ArgumentError
+      expect { example3 }.to raise_error ArgumentError
+      expect { example4 }.to raise_error ArgumentError
+      expect { example5 }.to raise_error ArgumentError
+      expect { example6 }.to raise_error ArgumentError
+      expect { example7 }.to raise_error ArgumentError
+      expect { example8 }.to raise_error ArgumentError
+      expect { example9 }.to raise_error ArgumentError
+      expect { example10 }.to raise_error ArgumentError
+      expect { example11 }.to raise_error ArgumentError
+    end
+  end
+end
