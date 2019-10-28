@@ -27,6 +27,7 @@ module Pueri
 
     # Outputs the calculated dosage into a prescription string.
     #
+    # @param pretty [Boolean] Whether to output a colored result or not.
     # @return [String] The prescription string.
     def to_s(pretty = false)
       if pretty

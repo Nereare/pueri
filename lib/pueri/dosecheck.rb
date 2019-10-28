@@ -27,6 +27,7 @@ module Pueri
 
     # Outputs the calculated dosage as a string.
     #
+    # @param pretty [Boolean] Whether to output a colored result or not.
     # @return [String] The dosage-per-weight-day string.
     def to_s(pretty = false)
       if pretty
