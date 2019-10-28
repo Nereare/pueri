@@ -28,11 +28,16 @@ module Pueri
     # Outputs the calculated dosage as a string.
     #
     # @return [String] The dosage-per-weight-day string.
-    def to_s
-      [
-        "#{@name} #{@concentration.to_i}#{@conc_unit.join '/'} (#{usage})",
-        "-> Dose de #{@result}#{@conc_unit[0]}/kg/d."
-      ].join "\n"
+    def to_s(pretty = false)
+      if pretty
+        pretty_to_s
+      else
+        [
+          '',
+          "#{@name} #{@concentration.to_i}#{@conc_unit.join '/'} (#{usage})",
+          " - Dose de #{@result}#{@conc_unit[0]}/kg/d."
+        ].join "\n"
+      end
     end
 
     # Outputs the calculated dosage-per-weight-day as a float.
@@ -43,6 +48,16 @@ module Pueri
     end
 
     private
+
+    def pretty_to_s
+      p = Pastel.new
+      [
+        '',
+        "#{p.cyan(@name, ' ', @concentration.to_i, @conc_unit.join('/'))} "\
+        "(#{usage}) ".ljust(90, '-'),
+        " - Dose de #{p.cyan(@result, @conc_unit[0], '/kg/d')}."
+      ].join("\n")
+    end
 
     def usage
       time = @time.to_i
