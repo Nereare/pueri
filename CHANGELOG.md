@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+* Update Hippocratic License to `v1.2`.
+
 ## [0.11.4] - `2019-10-28`
 
 ### Changed
