@@ -6,7 +6,7 @@
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/pueri)](https://github.com/Nereare/pueri/releases)
 [![Gem](https://img.shields.io/gem/v/pueri)](https://rubygems.org/gems/pueri)
-[![License](https://img.shields.io/badge/license-Hippocratic%20License%20v1.1-red)](LICENSE.md)
+[![License](https://img.shields.io/badge/license-Hippocratic%20License%20v1.2-red)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
 
 [![Travis (.org)](https://img.shields.io/travis/Nereare/pueri)](https://travis-ci.org/Nereare/pueri)
