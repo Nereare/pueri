@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.5] - `2019-11-02`
+
 ### Changed
 * Update Hippocratic License to `v1.2`.
+* Update `Gemspec` license to `Hippocratic`.
 
 ## [0.11.4] - `2019-10-28`
 
@@ -46,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [PNI]: http://www.saude.gov.br/saude-de-a-z/vacinacao/calendario-vacinacao
 [DNPM]: https://www.fcm.unicamp.br/fcm/neuropediatria-conteudo-didatico/desenvolvimento-neuropsicomotor
 
-[Unreleased]: https://github.com/Nereare/pueri/compare/v0.11.4...HEAD
+[Unreleased]: https://github.com/Nereare/pueri/compare/v0.11.5...HEAD
+[0.11.5]: https://github.com/Nereare/pueri/compare/v0.11.4...v0.11.5
 [0.11.4]: https://github.com/Nereare/pueri/compare/v0.11.2...v0.11.4
 [0.11.2]: https://github.com/Nereare/pueri/compare/v0.7.0...v0.11.2
 [0.7.0]: https://github.com/Nereare/pueri/releases/tag/v0.7.0
