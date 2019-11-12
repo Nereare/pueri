@@ -22,7 +22,7 @@ GEM
       equatable (~> 0.6)
       tty-color (~> 0.5)
     rainbow (3.0.0)
-    rake (13.0.0)
+    rake (13.0.1)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -67,6 +67,7 @@ GEM
     yard (0.9.20)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
