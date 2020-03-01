@@ -64,7 +64,7 @@ GEM
       tty-screen (~> 0.7)
     unicode-display_width (1.6.1)
     unicode_utils (1.4.0)
-    yard (0.9.23)
+    yard (0.9.24)
 
 PLATFORMS
   ruby
@@ -77,7 +77,7 @@ DEPENDENCIES
   rspec (~> 3.9)
   rubocop (~> 0.80.1)
   simplecov (~> 0.18.5)
-  yard (~> 0.9.23)
+  yard (~> 0.9.24)
 
 BUNDLED WITH
    2.0.2
