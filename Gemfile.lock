@@ -21,7 +21,7 @@ GEM
       equatable (~> 0.6)
       tty-color (~> 0.5)
     rainbow (3.0.0)
-    rake (13.0.0)
+    rake (13.0.4)
     rexml (3.2.4)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
